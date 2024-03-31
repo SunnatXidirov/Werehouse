@@ -1,0 +1,45 @@
+server:
+  port: 8081
+
+jwt:
+  access:
+    token:
+      secret: U0RGVyQ0MzUzZnNkRyUkXiQlXjxERkhHPE9ZVUslJF4+SkhGR0pUUllVJV4=
+      expiry:
+        adding:
+          amount: 2
+  refresh:
+    token:
+      secret: c2RGJF4lJiVeKERGR05NU0RGR0xFRktHREZMT0pUIylUIyQlXiMkJV9eJCVe
+      expiry:
+        adding:
+          amount: 10
+
+spring:
+  application:
+    name: Online-Food-Storage
+  datasource:
+    driverClassName: org.postgresql.Driver
+    username: postgres
+    password: 1122
+    url: jdbc:postgresql://localhost:5432/foodstorage
+  jpa:
+    database: postgresql
+    hibernate:
+      ddl-auto: create
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+
+springdoc:
+  swagger-ui:
+    try-it-out-enabled: on
+
+logging:
+  level:
+    root: info
+    org:
+      zalando:
+        logbook: TRACE
